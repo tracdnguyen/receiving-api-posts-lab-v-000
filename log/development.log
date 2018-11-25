@@ -1749,3 +1749,15 @@ Processing by ProductsController#create as */*
 [active_model_serializers]   [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 22]]
 [active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (43.06ms)
 Completed 201 Created in 113ms (Views: 79.1ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/products" for 76.183.233.132 at 2018-11-25 20:56:47 +0000
+Cannot render console from 76.183.233.132! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l6qXDKA1lck+1CPpiQU4tRrVDiblXbsi2BDMbCdor9DFotrSA799bGYJSgpyLQxlmRH60Q/08sp/LQG91MNcaA==", "product"=>{"name"=>"Name", "price"=>"1", "description"=>"Desc", "inventory"=>"2"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Name"], ["description", "Desc"], ["inventory", 2], ["price", 1], ["created_at", "2018-11-25 20:56:47.047813"], ["updated_at", "2018-11-25 20:56:47.047813"]]
+  [1m[35m (3.7ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 23]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (4.78ms)
+Completed 201 Created in 102ms (Views: 5.9ms | ActiveRecord: 4.4ms)
